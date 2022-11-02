@@ -1,0 +1,23 @@
+{
+  "name": "vscodesnippetgenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prooheckcp/VScodeSnippetGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prooheckcp/VScodeSnippetGenerator/issues"
+  },
+  "homepage": "https://github.com/prooheckcp/VScodeSnippetGenerator#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}

@@ -61,8 +61,9 @@ async function readFile(fullFilePath){
     return cleanedContent
 }
 
-async function loadFile(file){
-    let fullFilePath = path.join(snippetsFolder, file)
+async function loadFile(fullFilePath){
+    let pathDirectories = fullFilePath.split("\\")
+    let file = pathDirectories[pathDirectories.length - 1]
     let words = file.split(".")
     let fileType = words[words.length - 1]
     let fileName = words[0]
@@ -99,7 +100,15 @@ async function loadFile(file){
     }
 }
 
-let files = fs.readdirSync(snippetsFolder)
+let folders = fs.readdirSync(snippetsFolder)
+let files = []
+
+folders.forEach((folder)=>{
+    let folderFiles = fs.readdirSync(path.join(snippetsFolder, folder))
+    folderFiles.forEach((file)=>{
+        files.push(path.join(snippetsFolder, folder, file))
+    })
+})
 
 files.forEach((file)=>{
     fileCount += 1

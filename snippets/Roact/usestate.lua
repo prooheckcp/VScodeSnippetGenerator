@@ -1,0 +1,1 @@
+local $1, set$1 = hooks.useState($2)

@@ -1,3 +1,2 @@
-for i = 1, 3, 1 do
-	
+for i = , , 1 do
 end

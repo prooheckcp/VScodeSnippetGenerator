@@ -1,0 +1,1 @@
+local NetworkSettings = game:GetService("NetworkSettings")

@@ -1,0 +1,1 @@
+local UGCValidationService = game:GetService("UGCValidationService")

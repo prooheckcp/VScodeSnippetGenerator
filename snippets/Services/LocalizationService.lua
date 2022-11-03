@@ -1,0 +1,1 @@
+local LocalizationService = game:GetService("LocalizationService")

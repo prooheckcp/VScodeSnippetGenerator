@@ -1,0 +1,1 @@
+local FriendService = game:GetService("FriendService")

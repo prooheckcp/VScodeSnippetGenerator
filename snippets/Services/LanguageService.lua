@@ -1,0 +1,1 @@
+local LanguageService = game:GetService("LanguageService")

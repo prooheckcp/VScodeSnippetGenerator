@@ -1,0 +1,1 @@
+local DebuggerManager = game:GetService("DebuggerManager")

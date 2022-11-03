@@ -2,8 +2,24 @@ var fs = require('fs');
 var path = require('path');
 const readline = require('readline');
 const { once } = require('node:events');
+let getDirName = require('path').dirname;
 
 let snippetsFolder = path.join(__dirname, "snippets")
+
+let services = ["AdService", "AnalyticsService", "AntiAddictionService", "AppStorageService", "AppUpdateService", "AssetCounterService", "AssetDeliveryProxy", "AssetManagerService", "AssetService", "AvatarEditorService", "BadgeService", "BrowserService", "BulkImportService",
+"CacheableContentProvider", "ChangeHistoryService", "Chat", "ClusterPacketCache", "CollectionService", "ContentProvider", "ContextActionService", "ControllerService", "CookiesService", "CoreGui", "CorePackages", "CoreScriptSyncService", "CSGDictionaryService",
+"DataStoreService", "Debris", "DebuggerManager", "DraftsService", "EventIngestService", "FileSyncService", "FlagStandService", "FlyweightService", "FriendService", "GamepadService", "GamePassService", "Geometry", "GoogleAnalyticsConfiguration", "GroupService", "GuidRegistryService", "GuiService",
+"HapticService", "HeightmapImporterService", "Hopper", "HttpRbxApiService", "HttpService",
+"ILegacyStudioBridge", "InsertService", "InstancePacketCache", "InternalSyncService", "JointsService" , "KeyboardService", "KeyframeSequenceProvider",
+"LanguageService", "LegacyStudioBridge", "Lighting", "LocalizationService", "LocalStorageService", "LoginService", "LogService", "LuaWebService",
+"MarketplaceService", "MaterialService", "MemStorageService", "MeshContentProvider", "MessagingService", "MouseService",
+"NavigationService", "NetworkClient", "NetworkServer", "NetworkSettings", "NotificationService", "NonReplicatedCSGDictionaryService",
+"PackageService", "PathfindingService", "PermissionsService", "PersonalServerService", "PhysicsPacketCache", "PhysicsService", "PlayerEmulatorService", "Players", "PluginDebugService", "PluginGuiService", "PointsService", "PolicyService", "PresenceService", "ProximityPromptService",
+"RbxAnalyticsService", "RenderSettings", "ReplicatedFirst", "ReplicatedStorage", "RobloxPluginGuiService", "RobloxReplicatedStorage", "RunService", "RuntimeScriptService", 
+"ScriptContext", "ScriptService", "Selection", "ServerScriptService", "ServerStorage", "SessionService", "SocialService", "SolidModelContentProvider", "SoundService", "SpawnerService", "StarterGui", "StarterPack", "StarterPlayer", "Stats", "StopWatchReporter", "Studio", "StudioData", "StudioService",
+"TaskScheduler", "Teams", "TeleportService", "TestService", "TextChatService", "TextService", "ThirdPartyUserService", "TimerService", "TouchInputService", "TracerService", "TweenService", 
+"UGCValidationService", "UnvalidatedAssetService", "UserInputService", "UserService", "UserStorageService", "VersionControlService", "VirtualInputManager", "VirtualUser", "Visit", "VoiceChatService", "VRService", "Workspace"
+]
 
 let generatedSnippets = []
 let loadedCount = 0
@@ -108,6 +124,20 @@ folders.forEach((folder)=>{
     folderFiles.forEach((file)=>{
         files.push(path.join(snippetsFolder, folder, file))
     })
+})
+
+function writeFile(path, contents, cb) {
+    fs.mkdir(getDirName(path), { recursive: true}, function (err) {
+      if (err) return cb(err);
+  
+      fs.writeFile(path, contents, cb);
+    });
+  }
+
+services.forEach(service=>{
+    console.log("Writting...")
+    let code = `local ${service} = game:GetService("${service}")`
+    writeFile(`snippets/Services/${service}.lua`, code, (err)=>{})
 })
 
 files.forEach((file)=>{

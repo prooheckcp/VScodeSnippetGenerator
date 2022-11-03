@@ -1,0 +1,1 @@
+local AdService = game:GetService("AdService")

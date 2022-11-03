@@ -1,0 +1,1 @@
+local HapticService = game:GetService("HapticService")

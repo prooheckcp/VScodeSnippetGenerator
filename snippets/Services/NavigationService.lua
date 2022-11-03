@@ -1,0 +1,1 @@
+local NavigationService = game:GetService("NavigationService")

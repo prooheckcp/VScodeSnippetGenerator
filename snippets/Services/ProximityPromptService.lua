@@ -1,0 +1,1 @@
+local ProximityPromptService = game:GetService("ProximityPromptService")

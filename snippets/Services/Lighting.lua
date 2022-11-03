@@ -1,0 +1,1 @@
+local Lighting = game:GetService("Lighting")

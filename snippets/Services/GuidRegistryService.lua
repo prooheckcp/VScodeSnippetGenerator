@@ -1,0 +1,1 @@
+local GuidRegistryService = game:GetService("GuidRegistryService")

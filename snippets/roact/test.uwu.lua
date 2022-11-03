@@ -1,3 +1,3 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-"uwu"
+local Workspace = game:GetService("Workspace")
+local Workspace = game:GetService("Workspace")

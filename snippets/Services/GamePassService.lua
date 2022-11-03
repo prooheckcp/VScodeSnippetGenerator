@@ -1,0 +1,1 @@
+local GamePassService = game:GetService("GamePassService")

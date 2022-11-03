@@ -1,0 +1,1 @@
+local CoreScriptSyncService = game:GetService("CoreScriptSyncService")

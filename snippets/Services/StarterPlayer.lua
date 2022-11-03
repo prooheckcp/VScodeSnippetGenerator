@@ -1,0 +1,1 @@
+local StarterPlayer = game:GetService("StarterPlayer")

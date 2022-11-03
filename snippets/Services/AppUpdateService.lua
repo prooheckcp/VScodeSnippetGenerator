@@ -1,0 +1,1 @@
+local AppUpdateService = game:GetService("AppUpdateService")

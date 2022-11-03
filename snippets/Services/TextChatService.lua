@@ -1,0 +1,1 @@
+local TextChatService = game:GetService("TextChatService")
